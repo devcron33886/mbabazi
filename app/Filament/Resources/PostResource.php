@@ -59,6 +59,7 @@ class PostResource extends Resource
                     ->options([
                         'draft' => 'Draft',
                         'published' => 'Published',
+                        'pending' => 'Pending',
                     ])
                     ->native(false)
                     ->required(),
