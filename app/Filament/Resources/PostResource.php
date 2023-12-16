@@ -11,6 +11,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use FilamentTiptapEditor\TiptapEditor;
 
@@ -90,7 +91,32 @@ class PostResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                SelectFilter::make('status')
+                    ->placeholder('Select Status')
+                    ->options([
+                        'draft' => 'Draft',
+                        'published' => 'Published',
+                        'pending' => 'Pending',
+                    ])
+                    ->native(false),
+                SelectFilter::make('category_id')
+                    ->label('Category')
+                    ->placeholder('Select Category')
+                    ->searchable()
+                    ->multiple()
+                    ->getSearchResultsUsing(fn (string $search): array => Category::where('name', 'like', "%{$search}%")->limit(50)->pluck('name', 'id')->toArray())
+                    ->getOptionLabelsUsing(fn (array $values): array => Category::whereIn('id', $values)->pluck('name', 'id')->toArray())
+                    ->relationship('categories', 'name')
+                    ->native(false),
+                SelectFilter::make('tag_id')
+                    ->label('Tag')
+                    ->placeholder('Select Tag')
+                    ->searchable()
+                    ->multiple()
+                    ->getSearchResultsUsing(fn (string $search): array => Tag::where('name', 'like', "%{$search}%")->limit(50)->pluck('name', 'id')->toArray())
+                    ->getOptionLabelsUsing(fn (array $values): array => Tag::whereIn('id', $values)->pluck('name', 'id')->toArray())
+                    ->relationship('tags', 'name')
+                    ->native(false),
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
