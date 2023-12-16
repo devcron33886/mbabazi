@@ -15,8 +15,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
-    <div class="relative isolate overflow-hidden bg-gray-900">
+<body class="bg-gray-900">
+    <div class="relative isolate overflow-hidden">
         @if (Route::has('login'))
             <livewire:welcome.navigation />
         @endif
@@ -82,27 +82,38 @@
             </div>
         </div>
 
-        <!-- Logo cloud -->
-        <div class="mx-auto mt-8 max-w-7xl px-6 sm:mt-16 lg:px-8">
-            <h2 class="text-center text-lg font-semibold leading-8 text-white">The company I have worked with.</h2>
-            <div
-                class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-                <img class="col-span-2 max-h-14 w-full object-contain lg:col-span-1"
-                    src="https://hopeandhomes.rw/wp-content/uploads/2023/06/LOGO-1024x819.png"
-                    alt="Hope and Homes For Children Rwanda" width="158" height="48">
-                <img class="col-span-2 max-h-14 w-full object-contain lg:col-span-1"
-                    src="https://crusaders.africa/assets/logo.png" alt="Reform" width="158" height="48">
-                <img class="col-span-2 max-h-14 w-full object-contain lg:col-span-1"
-                    src="https://tailwindui.com/img/logos/158x48/tuple-logo-white.svg" alt="Tuple" width="158"
-                    height="48">
-                <img class="col-span-2 max-h-14 w-full object-contain sm:col-start-2 lg:col-span-1"
-                    src="https://tailwindui.com/img/logos/158x48/savvycal-logo-white.svg" alt="SavvyCal" width="158"
-                    height="48">
-                <img class="col-span-2 col-start-2 max-h-14 w-full object-contain sm:col-start-auto lg:col-span-1"
-                    src="https://tailwindui.com/img/logos/158x48/statamic-logo-white.svg" alt="Statamic" width="158"
-                    height="48">
-            </div>
+
+
+    </div>
+    <!-- Logo cloud -->
+    <div class="mx-auto py-24 mt-8 max-w-7xl px-6 sm:mt-16 lg:px-8">
+        <h2 class="text-center text-lg font-semibold leading-8 text-white">The company I have worked with.</h2>
+        <div
+            class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+            <img class="col-span-2 max-h-14 w-full object-contain lg:col-span-1"
+                src="https://hopeandhomes.rw/wp-content/uploads/2023/06/LOGO-1024x819.png"
+                alt="Hope and Homes For Children Rwanda" width="158" height="48">
+            <img class="col-span-2 max-h-14 w-full object-contain lg:col-span-1"
+                src="https://crusaders.africa/assets/logo.png" alt="Reform" width="158" height="48">
+            <img class="col-span-2 max-h-14 w-full object-contain lg:col-span-1"
+                src="https://tailwindui.com/img/logos/158x48/tuple-logo-white.svg" alt="Tuple" width="158"
+                height="48">
+            <img class="col-span-2 max-h-14 w-full object-contain sm:col-start-2 lg:col-span-1"
+                src="https://tailwindui.com/img/logos/158x48/savvycal-logo-white.svg" alt="SavvyCal" width="158"
+                height="48">
+            <img class="col-span-2 col-start-2 max-h-14 w-full object-contain sm:col-start-auto lg:col-span-1"
+                src="https://tailwindui.com/img/logos/158x48/statamic-logo-white.svg" alt="Statamic" width="158"
+                height="48">
         </div>
+    </div>
+    <!-- From the blog -->
+    <div class="mx-auto py-24 max-w-7xl px-6 sm:mt-16 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">From the blog</h2>
+            <p class="mt-2 text-lg leading-8 text-white">Learn how to grow your business with our expert
+                advice.</p>
+        </div>
+        <x-blog-component />
     </div>
 
     <x-footer-component />
