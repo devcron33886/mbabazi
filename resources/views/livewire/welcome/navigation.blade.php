@@ -20,11 +20,11 @@
                 </button>
             </div>
             <div class="hidden lg:flex lg:gap-x-12">
-                <a href="#" wire:navigate
+                <a href="{{ route('welcome')}}" wire:navigate
                     class="text-sm font-semibold leading-6 text-white hover:text-slate-400 transition duration-150 ease-in-out">Home</a>
 
 
-                <a href="#" wire:navigate
+                <a href="{{ route('blog')}}" wire:navigate
                     class="text-sm font-semibold leading-6 text-white hover:text-slate-400 transition duration-150 ease-in-out">Blog</a>
 
                 <a href="#" wire:navigate
