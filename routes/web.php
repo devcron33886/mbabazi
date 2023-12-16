@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'welcome')->name('welcome');
-Route::view('/blog', 'blog')->name('blog');
+Route::view('/blog', 'blog/index')->name('blog');
 Route::view('/blog/{post:slug}', 'blog/show')->name('post');
 Route::view('/contact', 'contact')->name('contact');
 Route::view('/shop', 'shop/index')->name('shop');
