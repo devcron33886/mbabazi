@@ -76,8 +76,8 @@ class PostResource extends Resource
                 Tables\Columns\ImageColumn::make('featured_image'),
 
                 Tables\Columns\TextColumn::make('status')
-                    ->badge()
-                    ->searchable(),
+                    ->badge(),
+                    
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
