@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\PostStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -19,6 +20,7 @@ class Post extends Model
     protected $casts = [
         'tags' => 'array',
         'categories' => 'array',
+        'status' => PostStatus::class,
     ];
 
 
@@ -51,7 +53,6 @@ class Post extends Model
             $post->author_id = auth()->id();
             $post->slug = Str::slug($post->title);
             $post->excerpt = Str::limit($post->body, 120);
-            
         });
     }
 }

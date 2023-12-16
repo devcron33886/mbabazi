@@ -6,7 +6,8 @@ namespace App\Enums;
 use Filament\Support\Contracts\HasColor;
 use Filament\Support\Contracts\HasLabel;
 
-enum PostStatus: string implements HasColor,HasLabel
+enum PostStatus: string implements HasColor, HasLabel
+
 {
     case PUBLISHED = 'published';
     case DRAFT = 'draft';
@@ -20,7 +21,6 @@ enum PostStatus: string implements HasColor,HasLabel
             self::DRAFT => 'Draft',
             self::PENDING => 'Pending',
         };
-        
     }
 
     public function getColor(): string |array|null
