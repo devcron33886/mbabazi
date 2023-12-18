@@ -109,6 +109,9 @@
     <!-- Services -->
     <x-service-component />
 
+    <!--Projects-->
+    <x-project-component />
+
     <!-- From the blog -->
     <div class="mx-auto py-24 max-w-7xl px-6 sm:mt-16 lg:px-8">
         <div class="mx-auto max-w-2xl text-center">

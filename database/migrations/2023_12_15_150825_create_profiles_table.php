@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('twitter');
             $table->string('facebook');
             $table->string('github');
+            $table->string('youtube');
             $table->string('buymecoffee');
             $table->string('medium');
             $table->string('email');
