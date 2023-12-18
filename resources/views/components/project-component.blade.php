@@ -2,7 +2,7 @@
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl text-center">
             <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Projects</h2>
-            <p class="mt-2 text-lg leading-8 text-indigo-600">I have worked with different customers form different
+            <p class="mt-2 text-lg leading-8 text-white">I have worked with different customers form different
                 industries.</p>
         </div>
         <div
