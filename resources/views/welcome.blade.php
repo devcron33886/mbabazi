@@ -81,9 +81,44 @@
                 </div>
             </div>
         </div>
+        <!-- "Woosh" animation script and template -->
+        <script data-navigate-once>
+            // Every 150ms we'll generate a new "woosh" vertical line, place it randomly, and animate it.
+            setInterval(() => {
+                let el = document.querySelector('#woosh').content.cloneNode(true).firstElementChild;
+                document.querySelector('#woosh').after(el);
 
+                setTimeout(() => woosh(el), 10);
+            }, 150);
 
+            function woosh(el) {
+                let random = (max) => Math.floor(Math.random() * max);
+                let parent = el;
+                let child = el.firstElementChild;
 
+                parent.style.setProperty('left', random(100) + '%');
+                parent.style.setProperty('top', (random(1000) - 500) + 'px');
+                parent.classList.remove('translate-y-0');
+                setTimeout(() => parent.classList.add('translate-y-[500px]'), 50);
+
+                child.classList.remove('opacity-0');
+                setTimeout(() => {
+                    child.classList.add('opacity-0');
+
+                    setTimeout(() => {
+                        el.remove();
+                    }, 1000);
+                }, 650);
+            }
+        </script>
+
+        <template id="woosh">
+            <div class="absolute translate-y-0 transition-transform duration-[1000ms]">
+                <div
+                    class="duration-350 h-[500px] w-[1px] bg-gradient-to-b from-transparent via-[#6A1F3Faa] opacity-0 transition-opacity">
+                </div>
+            </div>
+        </template>
     </div>
     <!-- Logo cloud -->
     <div class="mx-auto py-24 mt-8 max-w-7xl px-6 sm:mt-16 lg:px-8">
@@ -112,9 +147,6 @@
     <!--Projects-->
     <x-project-component />
 
-    <!-- Call to action -->
-    <x-cta-component />
-
     <!-- From the blog -->
     <div class="mx-auto py-24 max-w-7xl px-6 sm:mt-16 lg:px-8">
         <div class="mx-auto max-w-2xl text-center">
@@ -124,6 +156,9 @@
         </div>
         <x-blog-component />
     </div>
+
+    <!-- Call to action -->
+    <x-cta-component />
 
 
     <x-footer-component />
