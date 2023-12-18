@@ -13,7 +13,19 @@ return new class extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->longText('description');
+            $table->string('instagram');
+            $table->string('twitter');
+            $table->string('facebook');
+            $table->string('github');
+            $table->string('buymecoffee');
+            $table->string('medium');
+            $table->string('email');
+            $table->string('phone_number');
+            $table->string('address');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
